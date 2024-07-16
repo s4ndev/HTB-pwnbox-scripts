@@ -8,3 +8,4 @@ echo "mate-session" > ~/.xsession
 sudo systemctl restart xrdp
 sudo systemctl enable xrdp
 sudo gsettings set org.mate.Marco.general compositing-manager false
+sudo reboot
