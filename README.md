@@ -4,6 +4,9 @@
 
 ## Get Started:
 
+> [!CAUTION]
+> The xRDP server that will be deployed by this will intentionally sacrifice a myriad of otherwise important security features for the sake of maximising performance. THis is done because all data will be travel through a secure SSH tunnel. This should not be implemented for any other case and no responsibility will be taken for your lack of intelligence, this project is strictly for educational purposes only.
+
 ### - Server Side
 
 1. In Pwnbox's home, open the user_init script (this script gets run by HTB every time a new Pwnbox gets deployed)
