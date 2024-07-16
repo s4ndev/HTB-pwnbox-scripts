@@ -5,7 +5,6 @@ sudo rm /etc/xrdp/sesman.ini
 sudo wget -O /etc/xrdp/xrdp.ini https://raw.githubusercontent.com/s4ndev/pwnbox-scripts/main/xrdp.ini
 sudo wget -O /etc/xrdp/sesman.ini https://raw.githubusercontent.com/s4ndev/pwnbox-scripts/main/sesman.ini
 echo "mate-session" > ~/.xsession
-sudo sysctl -w net.core.wmem_max=8388608
 sudo systemctl restart xrdp
 sudo systemctl enable xrdp
 sudo gsettings set org.mate.Marco.general compositing-manager false
