@@ -20,7 +20,7 @@
 
 ### - Client Side
 
-> What we did in the server side section is mainly deploy an xRDP server (amongst other things). We won't be able to directly RDP to Pwnbox's assigned hostname/IP because their janky reverse > proxy or maybe we aren't meant to do that ¯\_(ツ)_/¯. But the website quite literally says HackTheBox so I'll take that as consent make some slight improvements to the service that I am > paying for :), please accept my fellow condolenses for the added CPU usage but it is advertised that VIP+ members get a "personal server". 
+> What we did in the server side section is mainly deploy an xRDP server (amongst other things). We won't be able to directly RDP to Pwnbox's assigned hostname/IP because their janky reverse > proxy or maybe we aren't meant to do that ¯\_(ツ)_/¯. 
 
 1. Please make sure to wait a few minutes for the script to finalise on the Pwnbox server.
 
