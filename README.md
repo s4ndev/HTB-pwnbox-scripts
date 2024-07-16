@@ -1,5 +1,6 @@
 # HTB-pwnbox-scripts
 - Do you f*****g hate HTB's online VNC viewer? me too!
+-> Well lets use RDP instead and waste some more time...
 
 ## Get Started:
 
