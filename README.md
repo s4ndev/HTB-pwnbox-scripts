@@ -1,43 +1,47 @@
-# HTB-pwnbox-scripts
-- Do you f*****g hate HTB's online VNC viewer? me too!
--> Well lets use RDP instead and waste some more time...
+# HTB Pwnbox Scripts
 
-## Get Started:
+A collection of high-performance and versatile alternative means to connect to HackTheBox's Pwnboxes.
 
-> [!CAUTION]
-> The xRDP server that will be deployed by this will intentionally sacrifice a myriad of otherwise important security features for the sake of maximising performance. This is done because all data will be travel through a secure SSH tunnel. This should not be implemented for any other case and no responsibility will be taken for your lack of intelligence, this project is strictly for educational purposes only.
+## Get Started
 
-### - Server Side
+> **⚠️ CAUTION:**  
+> The xRDP server deployed by this script intentionally sacrifices several important security features to maximize performance. This is feasible because all data will travel through a secure SSH tunnel. This setup is strictly for educational purposes and should not be implemented in any other context. The author assumes no responsibility for misuse.
 
-1. In Pwnbox's home, open the user_init script (this script gets run by HTB every time a new Pwnbox gets deployed)
-2. Insert:
+### Server-Side Setup
 
+1. On the Pwnbox's home directory, open the `user_init` script (this script gets executed by HTB each time a new Pwnbox is deployed).
+2. Insert the following commands:
+
+    ```sh
     sudo wget https://github.com/s4ndev/HTB-pwnbox-scripts/blob/main/pwnbox_init.sh
-    && sudo chmod +x pwnbox_init.sh
-    && ./pwnbox_init.sh
+    sudo chmod +x pwnbox_init.sh
+    ./pwnbox_init.sh
+    ```
+    
+3. Done! Wait approximately 3 minutes after deployment and proceed to the Client-Side section.
 
-3. Done! Wait ~3 minutes after deployment and continue to the Client Side section!
+### Client-Side Setup
 
-### - Client Side
+> On the server side, we primarily deploy an xRDP server (among other things). Direct RDP to the Pwnbox's assigned hostname/IP may not work due to their reverse proxy or other restrictions.
 
-> What we did in the server side section is mainly deploy an xRDP server (amongst other things). We won't be able to directly RDP to Pwnbox's assigned hostname/IP because their janky reverse > proxy or maybe we aren't meant to do that ¯\_(ツ)_/¯. 
+1. Wait a few minutes for the script to finalize on the Pwnbox server.
 
-1. Please make sure to wait a few minutes for the script to finalise on the Pwnbox server.
+2. Connect to the server using RDP over SSH. This involves establishing an SSH tunnel that will translate your local port 3389/tcp to the Pwnbox's interface on port 3389/tcp.
 
-2. Connect to the server using RDP over SSH. (establish an ssh tunnel which will also act as a translation between your (localhost) 3389/tcp port to Pwnbox's interface on port 3389/tcp.
+   - If you need guidance, refer to the `example_client.sh` script in the repository. It provides a basic example that works on macOS/Linux and can be translated to Windows, though some dependencies need to be installed first (details are in the first line of the script).
 
-   - for those a bit confused, please refer to script [example_client.sh] for a dodgy example of how everything works, tested to work on MacOS/Linux but should be easily translatable for Windows, but there are a few dependencies to install first so please check the 1st line (will organise this information later).
-   
+## Objectives and Improvements
 
-------------------------------------------------------------------------------------------------------------------
+### Current Objective
 
-Currently my main objective is to configure the RDP (xRDP) server [over xORG] to serve content with the highest performance and lowest latency without sacrificing too much quality.
+Configure the RDP (xRDP) server over xOrg to deliver the highest performance and lowest latency without sacrificing too much quality.
 
-This is also demonstrated in the [example_client.sh] file that is in the main repo, I am in the process of finding the best args to use to connect to the Pwnbox instance.
+### Improvements Made So Far
 
-- Improvements made so far....
-  - Using xRDP over xORG instead of xRDP over VNC (no explanation needed, VNC is ....)
-  - Reduce unnecessary processes that will affect the performance of the RDP session (when it comes to remote management protocols like these, the more static the content the better in
-      terms of performance, therefore unnecessary 3D effects, animations etc will not be beneficial whatsoever).
-  - Find the best arguements to use with FreeRDP client to connect to the Pwnbox's RDP server. (50% done)
+- **Using xRDP over xOrg:** Improved performance compared to xRDP over VNC.
+- **Optimization:** Reduced unnecessary processes that affect RDP session performance. Static content enhances performance, so unnecessary 3D effects and animations are minimized.
+- **FreeRDP Client Arguments:** Currently identifying the best arguments to use with the FreeRDP client to connect to the Pwnbox's RDP server (50% complete).
 
+---
+
+For a practical demonstration, refer to the `example_client.sh` file in the main repository. This file shows how to connect to a Pwnbox instance with optimized settings.
