@@ -7,6 +7,13 @@ sudo wget -O /etc/xrdp/sesman.ini https://raw.githubusercontent.com/s4ndev/HTB-p
 echo "mate-session" > ~/.xsession
 sudo systemctl restart xrdp
 sudo systemctl enable xrdp
+
 sudo gsettings set org.mate.Marco.general compositing-manager false
+
+dconf write /org/mate/desktop/background/primary-color "'#000000'"
+dconf write /org/mate/desktop/background/secondary-color "'#000000'"
+dconf write /org/mate/desktop/background/picture-options "'none'"
+dconf write /org/mate/desktop/background/picture-filename "''"
+
 # temporary testing feature to see if the script executes
-curl -X POST -d "executed=TRUE" https://posttestserver.dev/p/6mixd5d7p45crtyk/post
+# curl -X POST -d "executed=TRUE" https://posttestserver.dev/p/EXAMPLE
