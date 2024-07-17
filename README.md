@@ -13,8 +13,16 @@ A collection of high-performance and versatile alternative means to connect to H
 2. Insert the following commands:
 
     ```sh
-    sudo wget https://github.com/s4ndev/HTB-pwnbox-scripts/blob/main/pwnbox_init.sh
+    #!/bin/bash
+    # This script is executed every time your instance is spawned.
+
+    # Download the script from the raw URL
+    sudo wget https://raw.githubusercontent.com/s4ndev/HTB-pwnbox-scripts/main/pwnbox_init.sh
+
+    # Make the script executable
     sudo chmod +x pwnbox_init.sh
+
+    # Execute the script
     ./pwnbox_init.sh
     ```
     
