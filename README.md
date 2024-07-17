@@ -1,6 +1,6 @@
 # HTB Pwnbox Scripts
 
-A collection of high-performance and versatile alternative means to connect to HackTheBox's Pwnboxes.
+A high-performance and versatile alternative means to connect to HackTheBox's Pwnboxes.
 
 ## Get Started
 
