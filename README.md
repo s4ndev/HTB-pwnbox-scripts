@@ -39,6 +39,8 @@ A high-performance and versatile alternative means to connect to HackTheBox's Pw
 
    - If you need guidance, refer to the `example_client.sh` script in the repository. It provides a basic example that works on macOS/Linux and can be translated to Windows, though some dependencies need to be installed first (details are in the first line of the script).
 
+Note: You will need to create an "App Token" within HTB in order to perform this. (Link: https://app.hackthebox.com/profile/settings)
+
 ## Objectives and Improvements
 
 ### Current Objective
